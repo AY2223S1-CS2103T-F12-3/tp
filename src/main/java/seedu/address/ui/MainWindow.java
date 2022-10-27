@@ -58,8 +58,11 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private StackPane statusbarPlaceholder;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 05c8366cdc4cf261e69cd472b73d5e32ea2bae2c
     /**
      * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
      */
@@ -151,7 +154,6 @@ public class MainWindow extends UiPart<Stage> {
         }
     }
 
-
     /**
      * Opens the help window or focuses on it if it's already opened.
      */
@@ -168,6 +170,7 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.show();
     }
 
+<<<<<<< HEAD
     /**
      * Opens an archive window or focuses on it if it's already opened.
      */
@@ -180,6 +183,7 @@ public class MainWindow extends UiPart<Stage> {
             archiveWindow.focus();
         }
     }
+
 
     /**
      * Closes the application.
@@ -211,6 +215,7 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isShowHelp()) {
                 handleHelp();
+
             } else if (commandResult.isShowArchived()) {
                 handleShowArchive();
             }

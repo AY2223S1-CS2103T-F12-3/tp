@@ -23,8 +23,8 @@ import seedu.address.model.UserPrefs;
 import seedu.address.model.task.ModuleContainsKeywordsPredicate;
 
 public class ListModuleCommandTest {
-    private Model model = new ModelManager(getTypicalAddressBook(), getTypicalAddressBook(), new UserPrefs());
-    private Model expectedModel = new ModelManager(getTypicalAddressBook(), getTypicalAddressBook(), new UserPrefs());
+    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+    private Model expectedModel = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void equals() {
@@ -74,7 +74,7 @@ public class ListModuleCommandTest {
     }
 
     /**
-     * Parses {@code userInput} into a {@code NameContainsKeywordsPredicate}.
+     * Parses {@code userInput} into a {@code ModuleContainsKeywordsPredicate}.
      * @return
      */
     private ModuleContainsKeywordsPredicate preparePredicate(String userInput) {
