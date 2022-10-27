@@ -170,7 +170,6 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.show();
     }
 
-<<<<<<< HEAD
     /**
      * Opens an archive window or focuses on it if it's already opened.
      */

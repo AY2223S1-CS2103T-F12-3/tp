@@ -106,4 +106,6 @@ public interface Model {
      * @return Returns filter status of the tasklist.
      */
     String getFilterStatus();
+
+    void updateFilteredArchivedTaskList(Predicate<Task> predicateShowAllPersons);
 }
