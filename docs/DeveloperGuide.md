@@ -155,6 +155,7 @@ How the parsing works:
   interface so that they can be treated similarly where possible e.g, during testing.
 
 ### 4.4 Model component
+
 **API** : [`Model.java`](https://github.com/AY2223S1-CS2103T-F12-3/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
@@ -175,8 +176,7 @@ The `Model` component,
 
 ### 4.5 Storage component
 
-**
-API** : [`Storage.java`](https://github.com/se-edu/TaskList-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/se-edu/TaskList-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
