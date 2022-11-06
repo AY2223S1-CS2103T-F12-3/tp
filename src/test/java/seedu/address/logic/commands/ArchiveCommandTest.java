@@ -33,7 +33,7 @@ public class ArchiveCommandTest {
 
         String expectedMessage = String.format(archiveCommand.MESSAGE_ARCHIVED_TASK_SUCCESS, taskToArchive);
 
-        ModelManager expectedModel = new ModelManager(model.getAddressBook(),
+        ModelManager expectedModel = new ModelManager(model.getTaskList(),
                 model.getArchivedAddressBook(), new UserPrefs());
         expectedModel.archivedTask(taskToArchive);
 
@@ -57,7 +57,7 @@ public class ArchiveCommandTest {
 
         String expectedMessage = String.format(archiveCommand.MESSAGE_ARCHIVED_TASK_SUCCESS, taskToArchive);
 
-        Model expectedModel = new ModelManager(model.getAddressBook(), model.getArchivedAddressBook(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getTaskList(), model.getArchivedAddressBook(), new UserPrefs());
         expectedModel.archivedTask(taskToArchive);
         showNoPerson(expectedModel);
 
@@ -70,7 +70,7 @@ public class ArchiveCommandTest {
 
         Index outOfBoundIndex = INDEX_SECOND_PERSON;
         // ensures that outOfBoundIndex is still in bounds of address book list
-        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getPersonList().size());
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getTaskList().getTaskList().size());
 
         ArchiveCommand archiveCommand = new ArchiveCommand(outOfBoundIndex);
 

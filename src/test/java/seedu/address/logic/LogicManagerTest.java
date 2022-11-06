@@ -26,7 +26,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.ArchivedTaskBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
-import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.ReadOnlyTaskList;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.task.Task;
 import seedu.address.storage.JsonAddressBookStorage;
@@ -137,7 +137,7 @@ public class LogicManagerTest {
      */
     private void assertCommandFailure(String inputCommand, Class<? extends Throwable> expectedException,
             String expectedMessage) {
-        Model expectedModel = new ModelManager(model.getAddressBook(), new ArchivedTaskBook(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getTaskList(), new ArchivedTaskBook(), new UserPrefs());
         assertCommandFailure(inputCommand, expectedException, expectedMessage, expectedModel);
     }
 
@@ -163,7 +163,7 @@ public class LogicManagerTest {
         }
 
         @Override
-        public void saveAddressBook(ReadOnlyAddressBook addressBook, Path filePath) throws IOException {
+        public void saveAddressBook(ReadOnlyTaskList addressBook, Path filePath) throws IOException {
             throw DUMMY_IO_EXCEPTION;
         }
     }
@@ -177,7 +177,7 @@ public class LogicManagerTest {
         }
 
         @Override
-        public void saveArchivedTaskBook(ReadOnlyAddressBook archivedTaskBook, Path filePath) throws IOException {
+        public void saveArchivedTaskBook(ReadOnlyTaskList archivedTaskBook, Path filePath) throws IOException {
             throw DUMMY_IO_EXCEPTION;
         }
     }

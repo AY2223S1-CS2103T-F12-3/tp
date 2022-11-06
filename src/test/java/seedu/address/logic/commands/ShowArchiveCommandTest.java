@@ -19,7 +19,7 @@ public class ShowArchiveCommandTest {
     @BeforeEach
     public void setUp() {
         model = new ModelManager(getTypicalAddressBook(), getTypicalArchivedTaskBook(), new UserPrefs());
-        expectedModel = new ModelManager(model.getAddressBook(), model.getArchivedAddressBook(), new UserPrefs());
+        expectedModel = new ModelManager(model.getTaskList(), model.getArchivedAddressBook(), new UserPrefs());
     }
 
     @Test

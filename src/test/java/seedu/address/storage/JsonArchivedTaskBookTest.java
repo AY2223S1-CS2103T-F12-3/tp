@@ -18,7 +18,7 @@ import org.junit.jupiter.api.io.TempDir;
 
 import seedu.address.commons.exceptions.DataConversionException;
 import seedu.address.model.ArchivedTaskBook;
-import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.ReadOnlyTaskList;
 
 public class JsonArchivedTaskBookTest {
     private static final Path TEST_DATA_FOLDER = Paths.get("src", "test", "data", "JsonArchivedTaskBookStorageTest");
@@ -31,7 +31,7 @@ public class JsonArchivedTaskBookTest {
         assertThrows(NullPointerException.class, () -> readArchivedTaskBook(null));
     }
 
-    private java.util.Optional<ReadOnlyAddressBook> readArchivedTaskBook(String filePath) throws Exception {
+    private java.util.Optional<ReadOnlyTaskList> readArchivedTaskBook(String filePath) throws Exception {
         return new JsonArchivedTaskBookStorage(Paths.get(filePath))
                 .readArchivedTaskBook(addToTestDataPathIfNotNull(filePath));
     }
@@ -72,7 +72,7 @@ public class JsonArchivedTaskBookTest {
 
         // Save in new file and read back
         jsonArchivedTaskBookStorage.saveArchivedTaskBook(original, filePath);
-        ReadOnlyAddressBook readBack = jsonArchivedTaskBookStorage.readArchivedTaskBook(filePath).get();
+        ReadOnlyTaskList readBack = jsonArchivedTaskBookStorage.readArchivedTaskBook(filePath).get();
         assertEquals(original, new ArchivedTaskBook(readBack));
 
         // Modify data, overwrite exiting file, and read back
@@ -97,7 +97,7 @@ public class JsonArchivedTaskBookTest {
     /**
      * Saves {@code addressBook} at the specified {@code filePath}.
      */
-    private void saveArchivedTaskBook(ReadOnlyAddressBook archivedTaskBook, String filePath) {
+    private void saveArchivedTaskBook(ReadOnlyTaskList archivedTaskBook, String filePath) {
         try {
             new JsonArchivedTaskBookStorage(Paths.get(filePath))
                     .saveArchivedTaskBook(archivedTaskBook, addToTestDataPathIfNotNull(filePath));

@@ -12,10 +12,10 @@ import seedu.address.commons.exceptions.DataConversionException;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.FileUtil;
 import seedu.address.commons.util.JsonUtil;
-import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.ReadOnlyTaskList;
 
 /**
- * A class to access AddressBook data stored as a json file on the hard disk.
+ * A class to access TaskList data stored as a json file on the hard disk.
  */
 public class JsonArchivedTaskBookStorage implements ArchivedTaskBookStorage {
 
@@ -32,7 +32,7 @@ public class JsonArchivedTaskBookStorage implements ArchivedTaskBookStorage {
     }
 
     @Override
-    public Optional<ReadOnlyAddressBook> readArchivedTaskBook() throws DataConversionException, IOException {
+    public Optional<ReadOnlyTaskList> readArchivedTaskBook() throws DataConversionException, IOException {
         return readArchivedTaskBook(filePath);
     }
 
@@ -43,7 +43,7 @@ public class JsonArchivedTaskBookStorage implements ArchivedTaskBookStorage {
      * @throws DataConversionException if the file is not in the correct format.
      */
     @Override
-    public Optional<ReadOnlyAddressBook> readArchivedTaskBook(Path filePath)
+    public Optional<ReadOnlyTaskList> readArchivedTaskBook(Path filePath)
             throws DataConversionException, IOException {
         requireNonNull(filePath);
 
@@ -63,17 +63,17 @@ public class JsonArchivedTaskBookStorage implements ArchivedTaskBookStorage {
     }
 
     @Override
-    public void saveArchivedTaskBook(ReadOnlyAddressBook addressBook) throws IOException {
+    public void saveArchivedTaskBook(ReadOnlyTaskList addressBook) throws IOException {
         saveArchivedTaskBook(addressBook, filePath);
     }
 
     /**
-     * Similar to {@link #saveArchivedTaskBook(ReadOnlyAddressBook)}.
+     * Similar to {@link #saveArchivedTaskBook(ReadOnlyTaskList)}.
      *
      * @param filePath location of the data. Cannot be null.
      */
     @Override
-    public void saveArchivedTaskBook(ReadOnlyAddressBook addressBook, Path filePath) throws IOException {
+    public void saveArchivedTaskBook(ReadOnlyTaskList addressBook, Path filePath) throws IOException {
         requireNonNull(addressBook);
         requireNonNull(filePath);
 
