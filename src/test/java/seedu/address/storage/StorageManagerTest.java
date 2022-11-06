@@ -12,9 +12,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.TaskList;
 import seedu.address.model.ArchivedTaskBook;
 import seedu.address.model.ReadOnlyTaskList;
+import seedu.address.model.TaskList;
 import seedu.address.model.UserPrefs;
 
 public class StorageManagerTest {
